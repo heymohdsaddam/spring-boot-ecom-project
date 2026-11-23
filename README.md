@@ -120,5 +120,4 @@ The frontend points at `http://localhost:8080/api` in `src/axios.jsx`.
 - CORS is open for all origins.
 
 ## Author
-
-Valexia
+Mohd Saddam
