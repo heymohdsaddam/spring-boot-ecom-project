@@ -1,6 +1,5 @@
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { useState } from "react";
 import AppContext from "../Context/Context";
 import axios from "../axios";
 // import UpdateProduct from "./UpdateProduct";
@@ -48,6 +47,7 @@ const Product = () => {
       navigate("/");
     } catch (error) {
       console.error("Error deleting product:", error);
+      alert("Can not delete product this time");
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Home from "./Home"
+import Home from "./Home";
 import axios from "axios";
 
 const Navbar = ({ onSelectCategory, onSearch }) => {
@@ -13,7 +13,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
-  const [showSearchResults, setShowSearchResults] = useState(false)
+  const [showSearchResults, setShowSearchResults] = useState(false);
   useEffect(() => {
     fetchData();
   }, []);
@@ -31,10 +31,10 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   const handleChange = async (value) => {
     setInput(value);
     if (value.length >= 1) {
-      setShowSearchResults(true)
+      setShowSearchResults(true);
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/products/search?name=${value}`
+          `http://localhost:8080/api/products/search?name=${value}`,
         );
         setSearchResults(response.data);
         setNoResults(response.data.length === 0);
@@ -161,21 +161,22 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
                 />
                 {showSearchResults && (
                   <ul className="list-group">
-                    {searchResults.length > 0 ? (
-                      searchResults.map((result) => (
-                        <li key={result.id} className="list-group-item">
-                          <a href={`/product/${result.id}`} className="search-result-link">
-                            <span>{result.name}</span>
-                          </a>
-                        </li>
-                      ))
-                    ) : (
-                      noResults && (
-                        <p className="no-results-message">
-                          No Prouduct with such Name
-                        </p>
-                      )
-                    )}
+                    {searchResults.length > 0
+                      ? searchResults.map((result) => (
+                          <li key={result.id} className="list-group-item">
+                            <a
+                              href={`/product/${result.id}`}
+                              className="search-result-link"
+                            >
+                              <span>{result.name}</span>
+                            </a>
+                          </li>
+                        ))
+                      : noResults && (
+                          <p className="no-results-message">
+                            No Prouduct with such Name
+                          </p>
+                        )}
                   </ul>
                 )}
                 {/* <button

@@ -1,7 +1,11 @@
-import React, { useState } from "react";
 import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AppContext from "../Context/Context";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
+  const { refreshData } = useContext(AppContext);
   const [product, setProduct] = useState({
     id: 0,
     name: "",
@@ -41,8 +45,10 @@ const AddProduct = () => {
     axios
       .post("http://localhost:8080/api/product", formData)
       .then((response) => {
+        refreshData();
         console.log("Product added successfully:", response.data);
         alert("Product added successfully");
+        navigate("/");
       })
       .catch((error) => {
         console.error("Error adding product:", error);
