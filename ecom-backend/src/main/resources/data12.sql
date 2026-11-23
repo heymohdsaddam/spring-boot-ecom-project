@@ -1,0 +1,11 @@
+INSERT INTO product (name, "DESC", brand, price, category, release_date, available, quantity) VALUES
+                                                                                                  ('iPhone 15 Pro', 'Flagship smartphone with titanium design and A17 Pro chip', 'Apple', 999.99, 'Electronics', '2023-09-22', TRUE, 50),
+                                                                                                  ('Galaxy S24 Ultra', 'AI-powered Android smartphone with S Pen', 'Samsung', 1199.99, 'Electronics', '2024-01-31', TRUE, 35),
+                                                                                                  ('WH-1000XM5', 'Wireless noise-canceling over-ear headphones', 'Sony', 349.99, 'Audio', '2022-05-20', TRUE, 100),
+                                                                                                  ('MacBook Air M3', '13-inch lightweight laptop with M3 chip', 'Apple', 1099.00, 'Computers', '2024-03-08', TRUE, 25),
+                                                                                                  ('Air Zoom Pegasus 40', 'Everyday responsive road running shoes', 'Nike', 130.00, 'Footwear', '2023-04-13', TRUE, 80),
+                                                                                                  ('PlayStation 5 Slim', 'Next-gen gaming console with 1TB SSD', 'Sony', 499.99, 'Gaming', '2023-11-10', FALSE, 0),
+                                                                                                  ('MX Master 3S', 'Ergonomic wireless performance mouse', 'Logitech', 99.99, 'Accessories', '2022-05-31', TRUE, 150),
+                                                                                                  ('Kindle Paperwhite', 'Waterproof e-reader with 6.8-inch display', 'Amazon', 149.99, 'Electronics', '2021-10-27', TRUE, 60),
+                                                                                                  ('Instant Pot Duo 7-in-1', 'Electric pressure cooker and slow cooker', 'Instant Brands', 89.95, 'Home & Kitchen', '2019-06-15', TRUE, 40),
+                                                                                                  ('ThinkPad X1 Carbon', 'Ultra-light business laptop with Intel Core Ultra', 'Lenovo', 1499.00, 'Computers', '2024-02-26', FALSE, 0);
