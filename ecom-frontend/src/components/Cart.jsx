@@ -1,8 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
-import AppContext from "../Context/Context";
 import axios from "axios";
-import CheckoutPopup from "./CheckoutPopup.jsx";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import AppContext from "../Context/Context";
+import CheckoutPopup from "./CheckoutPopup.jsx";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useContext(AppContext);

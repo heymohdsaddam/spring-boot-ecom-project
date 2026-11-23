@@ -1,17 +1,16 @@
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import AddProduct from "./components/AddProduct";
+import Cart from "./components/Cart.jsx";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import UpdateProduct from "./components/UpdateProduct.jsx";
-import Cart from "./components/Cart.jsx";
-import AddProduct from "./components/AddProduct";
 import Product from "./components/Product";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UpdateProduct from "./components/UpdateProduct.jsx";
 import { AppProvider } from "./Context/Context";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [cart, setCart] = useState([]);

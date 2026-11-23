@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AppContext from "../Context/Context";
 
 const Home = ({ selectedCategory }) => {
@@ -23,7 +23,7 @@ const Home = ({ selectedCategory }) => {
             try {
               const response = await axios.get(
                 `http://localhost:8080/api/product/${product.id}/image`,
-                { responseType: "blob" }
+                { responseType: "blob" },
               );
               const imageUrl = URL.createObjectURL(response.data);
               return { ...product, imageUrl };
@@ -31,11 +31,11 @@ const Home = ({ selectedCategory }) => {
               console.error(
                 "Error fetching image for product ID:",
                 product.id,
-                error
+                error,
               );
               return { ...product, imageUrl: "placeholder-image-url" };
             }
-          })
+          }),
         );
         setProducts(updatedProducts);
       };
@@ -71,8 +71,7 @@ const Home = ({ selectedCategory }) => {
           </h2>
         ) : (
           filteredProducts.map((product) => {
-            const { id, brand, name, price, available, imageUrl } =
-              product;
+            const { id, brand, name, price, available, imageUrl } = product;
             const cardStyle = {
               width: "18rem",
               height: "12rem",
@@ -115,7 +114,6 @@ const Home = ({ selectedCategory }) => {
                       top: "25px",
                       left: "220px",
                       zIndex: "1",
-
                     }}
                   >
                     <div className="buttons-liked">
